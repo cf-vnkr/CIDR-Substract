@@ -2,6 +2,8 @@
 
 A Cloudflare Workers application that performs IPv4 CIDR range subtraction operations. Enter two CIDR ranges, and the tool will automatically subtract the smaller range from the larger one, displaying the optimized remaining IP ranges.
 
+**Published at:  https://cidr-substract.vnkr.workers.dev**
+
 ## Features
 
 - **CIDR Range Subtraction**: Automatically detects which range is larger and subtracts the smaller range from it
