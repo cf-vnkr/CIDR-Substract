@@ -15,8 +15,7 @@
 
         <main>
             <div class="info-box">
-                <p>This tool subtracts one CIDR range from another when they overlap. Enter two IPv4 CIDR ranges below, and if there's an overlap, the smaller range will be subtracted from the larger one.</p>
-                <p>Make easy work of excluding IP ranges from your Cloudflare WARP config.</p>
+                <p>This tool subtracts one CIDR range from another when they overlap. Enter two IPv4 CIDR ranges below, and if there's an overlap, the smaller range will be subtracted from the larger one. Results are automatically optimized to the minimum number of CIDR blocks.</p>
             </div>
 
             <form id="cidr-form">
@@ -58,24 +57,24 @@
             </div>
 
             <div class="examples">
-                <h3>Examples</h3>
+                <h3>Quick Examples</h3>
                 <div class="example-item">
-                    <strong>Example 1:</strong> Subtract 192.168.1.0/24 from 192.168.0.0/16
+                    <span><strong>Remove subnet from network:</strong> 192.168.0.0/16 − 192.168.1.0/24</span>
                     <button class="example-btn" data-cidr1="192.168.0.0/16" data-cidr2="192.168.1.0/24">Try it</button>
                 </div>
                 <div class="example-item">
-                    <strong>Example 2:</strong> Subtract 10.0.0.0/24 from 10.0.0.0/8
+                    <span><strong>Exclude small block:</strong> 10.0.0.0/8 − 10.0.0.0/24</span>
                     <button class="example-btn" data-cidr1="10.0.0.0/8" data-cidr2="10.0.0.0/24">Try it</button>
                 </div>
                 <div class="example-item">
-                    <strong>Example 3:</strong> Subtract 172.16.5.0/24 from 172.16.0.0/20
+                    <span><strong>Firewall optimization:</strong> 172.16.0.0/20 − 172.16.5.0/24</span>
                     <button class="example-btn" data-cidr1="172.16.0.0/20" data-cidr2="172.16.5.0/24">Try it</button>
                 </div>
             </div>
         </main>
 
         <footer>
-            <p>Built with Cloudflare Workers | <a href="https://github.com/cf-vnkr/CIDR-Substract" target="_blank">Source Code</a></p>
+            <p>Built with <a href="https://workers.cloudflare.com" target="_blank" rel="noopener">Cloudflare Workers</a> • <a href="https://github.com/cf-vnkr/CIDR-Substract" target="_blank" rel="noopener">View on GitHub</a></p>
         </footer>
     </div>
 
