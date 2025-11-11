@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIDR Substract - IPv4 Range Subtraction Tool</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CIDR Substract</h1>
+            <p class="subtitle">IPv4 CIDR Range Subtraction Tool</p>
+        </header>
+
+        <main>
+            <div class="info-box">
+                <p>This tool subtracts one CIDR range from another when they overlap. Enter two IPv4 CIDR ranges below, and if there's an overlap, the smaller range will be subtracted from the larger one.</p>
+            </div>
+
+            <form id="cidr-form">
+                <div class="form-group">
+                    <label for="cidr1">First CIDR Range:</label>
+                    <input
+                        type="text"
+                        id="cidr1"
+                        name="cidr1"
+                        placeholder="e.g., 192.168.0.0/16"
+                        required
+                        pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$"
+                    >
+                    <small>Format: xxx.xxx.xxx.xxx/xx</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidr2">Second CIDR Range:</label>
+                    <input
+                        type="text"
+                        id="cidr2"
+                        name="cidr2"
+                        placeholder="e.g., 192.168.1.0/24"
+                        required
+                        pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$"
+                    >
+                    <small>Format: xxx.xxx.xxx.xxx/xx</small>
+                </div>
+
+                <button type="submit" id="submit-btn">
+                    <span id="btn-text">Subtract Ranges</span>
+                    <span id="btn-loader" class="loader" style="display: none;"></span>
+                </button>
+            </form>
+
+            <div id="result-container" style="display: none;">
+                <h2>Result</h2>
+                <div id="result-content"></div>
+            </div>
+
+            <div class="examples">
+                <h3>Examples</h3>
+                <div class="example-item">
+                    <strong>Example 1:</strong> Subtract 192.168.1.0/24 from 192.168.0.0/16
+                    <button class="example-btn" data-cidr1="192.168.0.0/16" data-cidr2="192.168.1.0/24">Try it</button>
+                </div>
+                <div class="example-item">
+                    <strong>Example 2:</strong> Subtract 10.0.0.0/24 from 10.0.0.0/8
+                    <button class="example-btn" data-cidr1="10.0.0.0/8" data-cidr2="10.0.0.0/24">Try it</button>
+                </div>
+                <div class="example-item">
+                    <strong>Example 3:</strong> Subtract 172.16.5.0/24 from 172.16.0.0/20
+                    <button class="example-btn" data-cidr1="172.16.0.0/20" data-cidr2="172.16.5.0/24">Try it</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with Cloudflare Workers | <a href="https://github.com/cf-vnkr/CIDR-Substract" target="_blank">Source Code</a></p>
+        </footer>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

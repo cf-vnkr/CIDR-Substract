@@ -1,0 +1,19 @@
+{
+  "name": "cidr-substract",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers site to help users subtract subrange from CIDR",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "wrangler deploy --dry-run"
+  },
+  "keywords": ["cloudflare-workers", "cidr", "ipv4", "networking"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.93.0"
+  }
+}
